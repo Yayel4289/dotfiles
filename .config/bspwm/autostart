@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# mouse params
+TOUCHPAD=$(xinput list | grep "ELAN06A1" | grep -o 'id=[0-9]*' | grep -o '[0-9]*')
+xinput set-prop $TOUCHPAD "libinput Tapping Enabled" 1
+xinput set-prop $TOUCHPAD "libinput Natural Scrolling Enabled" 1
+
+# shortcuts
+(sleep 0.5 && sxhkd) &
+
+# bar 
+polybar main &
+
+# transparency 
+picom --experimental-backend &
+

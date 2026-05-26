@@ -1,0 +1,59 @@
+{
+	"snippets.ultisnips.directories": ["UltiSnips", "snippets"],
+	"snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+
+	"pyright.enable": true,
+    "pyright.inlayHints.variableTypes": false,
+	"pyright.inlayHints.parameterTypes": false,
+	"pyright.inlayHints.functionReturnTypes": false,
+	"pyright.disableDiagnostics": true,
+
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/21.1.0/clangd_21.1.0/bin/clangd",
+
+    "sh.enable": true,
+
+	"yaml.enable": true,
+	"yaml.completion": true,
+
+	"coc.source.vimtex.enable": true,
+	"coc.source.vimtex.filetypes": [
+		"tex",
+		"plaintex",
+		"latex",
+		"markdown"
+	],
+	"suggest.autoTrigger": "always",
+
+	"java.enabled": true,
+	"xml.java.home": "/home/yayel4289/.jdks/openjdk-21.0.2",
+	
+	"languageserver": {
+		"scheme": {
+		  "command": "racket",
+		  "args": ["-l", "racket-langserver"],
+		  "filetypes": ["scheme", "racket"]
+		},
+		"prolog-lsp": {
+		  "command": "swipl",
+		  "args": [
+			"-g", "use_module(library(lsp_server)).",
+            "-g", "lsp_server:main",
+            "-t", "halt",
+            "--", "stdio"
+          ],		  
+		  "filetypes": ["prolog"]
+		},
+		"texlab": {
+			"command": "texlab",
+			"filetypes": ["markdown"]
+		}
+    },
+
+    "java.imports.gradle.wrapper.checksums": [
+      {
+        "sha256": "76805e32c009c0cf0dd5d206bddc9fb22ea42e84db904b764f3047de095493f3",
+        "allowed": true
+      }
+    ],
+    "snippets.ultisnips.pythonPrompt": false
+}
