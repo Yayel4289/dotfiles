@@ -51,3 +51,7 @@ c_env() {
 	cp ~/utils/base_Makefile ./Makefile
 }
 
+pretty_dlv() {
+	dlv -silent -filter=answer $1 $2 | sed 's/{//g; s/}//g; s/, answer(/,\nanswer(/g'
+}
+

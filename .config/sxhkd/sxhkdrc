@@ -16,11 +16,16 @@ super + alt + r
 super + alt + q 
 	bspc quit
 
+
+
 # toggle bar 
 super + alt + p 
 	pkill polybar
 super + alt + shift + p 
 	polybar &
+
+super + alt + b 
+	pkill picom && picom --experimental-backend --config ~/.config/picom/picom.conf -b &
 
 #
 # close and kill

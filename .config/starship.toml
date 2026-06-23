@@ -1,0 +1,177 @@
+################################################################################
+# Promp (left) Format
+
+format = """
+[](#400404)\
+[  ](fg:#f01414 bg:#400404 bold)\
+[ ](bg:#600404 fg:#400404)\
+$directory\
+[ ](fg:#600404 bg:#400404)\
+$git_branch\
+[ ](fg:#400404)\
+$fill\
+$python\
+$c\
+$cpp\
+$java\
+$rlang\
+$nodejs\
+$rust\
+$golang\
+$php\
+\n$character"""
+
+################################################################################
+# Palette
+
+palette = "reds"
+
+[palettes.reds]
+red 		= "#f01414"	
+dark_red	= "#600404"
+purple_red	= "#500404"
+purpler_red	= "#400404"
+black_red	= "#200404"
+rosewater 	= "#f4dbd6"
+flamingo  	= "#f0c6c6"
+pink      	= "#f5bde6"
+pink2     	= "#ed8796"
+mauve     	= "#c6a0f6"
+maroon    	= "#ee99a0"
+peach     	= "#f5a97f"
+yellow    	= "#ffff04"
+cblue 		= "#0099f0"
+light_blue 	= "#4474f0"
+dark_blue 	= "#0404c0"
+text      	= "#ff8800"
+subtext  	= "#f01414"
+subsubtext  = "#a5adcb"
+overlay2  	= "#939ab7"
+overlay1  	= "#8087a2"
+overlay0  	= "#6e738d"
+surface2  	= "#5b6078"
+surface1  	= "#494d64"
+surface0  	= "#363a4f"
+base      	= "#24273a"
+mantle    	= "#1e2030"
+crust     	= "#181926"
+
+################################################################################
+# Prompt
+
+[character]
+success_symbol = "[ ❯](red)"
+error_symbol = "[死](red)"
+
+[fill]
+symbol = " "
+
+[directory]
+style = "fg:text bg:dark_red"
+format = "[ $path ]($style)"
+truncation_length = 2
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"documents" = "󰈙 "
+"downloads" = " "
+"images" = " "
+"videos" = "⏯ "
+
+[git_branch]
+symbol = ""
+style = "fg:subtext bg:purpler_red"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#400404"
+format = '[[($all_status$ahead_behind )](fg:#600404 bg:#400404)]($style)'
+
+[python]
+symbol = ""
+style = "bg:dark_red fg:yellow bold"
+format = """
+[](fg:purpler_red)\
+[(❮$virtualenv❯ )](fg:subtext bg:purpler_red)\
+[](fg:dark_red bg:purpler_red)\
+[ $symbol ]($style)\
+[](fg:dark_red bg:purpler_red)\
+[ $version ](fg:subtext bg:purpler_red)\
+[](fg:purpler_red)
+"""
+
+[c]
+symbol = ""
+style = "bg:dark_red fg:cblue bold"
+format = """
+[](fg:purpler_red)\
+[](fg:dark_red bg:purpler_red)\
+[ $symbol ]($style)\
+[](fg:dark_red bg:purpler_red)\
+[ $version ](fg:subtext bg:purpler_red)\
+[](fg:purpler_red)
+"""
+
+[cpp]
+symbol = ""
+style = "bg:dark_red fg:cblue bold"
+format = """
+[](fg:purpler_red)\
+[](fg:dark_red bg:purpler_red)\
+[ $symbol ]($style)\
+[](fg:dark_red bg:purpler_red)\
+[ $version ](fg:subtext bg:purpler_red)\
+[](fg:purpler_red)
+"""
+
+[java]
+symbol = "󰬷"
+style = "bg:dark_red fg:text "
+format = """
+[](fg:purpler_red)\
+[](fg:dark_red bg:purpler_red)\
+[ $symbol ]($style)\
+[](fg:dark_red bg:purpler_red)\
+[ $version ](fg:subtext bg:purpler_red)\
+[](fg:purpler_red)
+"""
+
+[rlang] # R
+symbol = ""
+style = "bg:dark_red fg:cblue bold"
+format = """
+[](fg:purpler_red)\
+[](fg:dark_red bg:purpler_red)\
+[ $symbol ]($style)\
+[](fg:dark_red bg:purpler_red)\
+[ $version ](fg:subtext bg:purpler_red)\
+[](fg:purpler_red)
+"""
+
+[nodejs]
+symbol = ""
+style = "bg:#200404"
+format = '[[ $symbol ($version) ](fg:#600404 bg:#200404)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#200404"
+format = '[[ $symbol ($version) ](fg:#600404 bg:#200404)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#200404"
+format = '[[ $symbol ($version) ](fg:#600404 bg:#200404)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#200404"
+format = '[[ $symbol ($version) ](fg:#600404 bg:#200404)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+
+################################################################################
