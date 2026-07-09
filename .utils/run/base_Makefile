@@ -1,0 +1,23 @@
+CFlags = -I./include/ -o build/main.out
+SRC = $(shell find src -name "*.c")
+AfterFlags = -lm
+TARGET = build/main.out
+
+all: $(TARGET)
+
+$(TARGET): 
+	@gcc $(CFlags) $(SRC) $(AfterFlags)
+
+clean: 
+	@rm -rf build/
+	@mkdir build/
+
+run: clean all
+	@./$(TARGET)
+
+valrun: clean all 
+	@valgrind ./$(TARGET)
+
+
+.PHONY: all clean run valrun
+

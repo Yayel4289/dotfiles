@@ -27,6 +27,9 @@ super + alt + shift + p
 super + alt + b 
 	pkill picom && picom --experimental-backend --config ~/.config/picom/picom.conf -b &
 
+super + alt + t 
+	~/.config/picom/scripts/toggle_active_window_opacity.sh
+
 #
 # close and kill
 alt + F4
@@ -198,11 +201,11 @@ XF86MonBrightnessDown
 
 # Screenshot
 Print 
-	~/utils/copy_screenshot.sh
+	$HOME/.dotfiles/.utils/screenshot/copy_screenshot.sh
 
 # Change wallpaper
-super + shift + w 
-	~/.config/video-wallpapers/setwall
+super + shift + w
+	$HOME/.config/video-wallpapers/setwall
 
 #
 # Apps 
@@ -230,10 +233,10 @@ super + g
 	google-chrome github.com/login
 
 super + u 
-	~/lauchVP.sh
+	$HOME/.dotfiles/.utils/launchers/lauchVP.sh
 
 super + l 
-	~/utils/screenlock.sh 
+	$HOME/.dotfiles/.utils/display/screenlock.sh
 
 super + y 
 	xdg-open "steam://open/main"

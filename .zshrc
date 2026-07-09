@@ -4,6 +4,8 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export UTILS="$HOME/.dotfiles/.utils"
+
 # Other exports
 export JAVA_HOME="/home/yayel4289/.jdks/openjdk-21.0.2"
 
