@@ -137,3 +137,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # OpenClaw Completion
 source "/home/yayel4289/.openclaw/completions/openclaw.zsh"
+export PATH=$PATH:/usr/sbin
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/home/yayel4289/.lmstudio/bin"

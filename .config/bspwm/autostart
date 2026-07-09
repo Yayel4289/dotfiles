@@ -5,6 +5,10 @@ TOUCHPAD=$(xinput list | grep "ELAN06A1" | grep -o 'id=[0-9]*' | grep -o '[0-9]*
 xinput set-prop $TOUCHPAD "libinput Tapping Enabled" 1
 xinput set-prop $TOUCHPAD "libinput Natural Scrolling Enabled" 1
 
+# sound 
+alsactl restore --file .config/asound.state 
+amixer set Speaker unmute
+
 # shortcuts
 (sleep 0.5 && sxhkd) &
 

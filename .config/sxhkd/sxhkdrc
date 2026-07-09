@@ -180,15 +180,13 @@ super + shift + f
 
 # Volume up
 XF86AudioRaiseVolume
-    amixer set Master 5%+
-
+    amixer set Speaker 5%+
 # Volume down
 XF86AudioLowerVolume
-    amixer set Master 5%-
-
+    amixer set Speaker 5%-
 # Mute / unmute
 XF86AudioMute
-    amixer set Master toggle
+    amixer set Speaker toggle
 
 # Brightness up
 XF86MonBrightnessUp
@@ -217,7 +215,7 @@ super + c
 	google-chrome --profile-directory="Default" &
 
 super + m 
-	/usr/bin/spotify
+	~/apps/LMStudio/LM-Studio-0.4.18-1-x64.AppImage &
 
 super + h 
 	kitty htop 
