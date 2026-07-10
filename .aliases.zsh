@@ -36,6 +36,9 @@ alias disconnect="bluetoothctl disconnect"
 # Wifi 
 alias connect_phone_wifi="nmcli d wifi && nmcli d wifi connect \"OPPO A52\""
 
+# Update apt installations
+alias update_installed="$UTILS/system/update_installed.sh"
+
 activate() {
 	source "$1/bin/activate"
 }
