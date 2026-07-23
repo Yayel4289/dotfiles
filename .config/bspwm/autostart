@@ -13,8 +13,9 @@ amixer set Speaker unmute
 (sleep 0.5 && sxhkd) &
 
 # bar 
-polybar main &
+(pkill polybar; polybar main) &
 
 # transparency 
-picom --experimental-backend &
+#picom --experimental-backend &
+picom &
 
