@@ -130,6 +130,9 @@ source $ZSH/oh-my-zsh.sh
 source ~/.aliases.zsh
 
 eval "$(starship init zsh)"
+
+eval "$(dircolors ~/.dircolors)"
+
 neofetch
 
 #LS_COLORS=$LS_COLORS:'di=0;31:' ; export LS_COLORS
@@ -138,8 +141,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# OpenClaw Completion
-source "/home/yayel4289/.openclaw/completions/openclaw.zsh"
 export PATH=$PATH:/usr/sbin
 
 # Added by LM Studio CLI tool (lms)
