@@ -215,7 +215,7 @@ super + Return
 	kitty
 
 super + c 
-	google-chrome --profile-directory="Default" &
+	google-chrome-stable --profile-directory="Default" &
 
 super + m 
 	lm-studio
