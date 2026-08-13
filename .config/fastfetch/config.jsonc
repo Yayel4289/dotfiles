@@ -1,0 +1,256 @@
+//   _____ _____ _____ _____ _____ _____ _____ _____ _   _ 
+//  |   __|  _  |   __|_   _|   __|   __|_   _|    _| |_| |
+//  |   __|     |__   | | | |   __|   __| | | |   |_|  _  |
+//  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|_| |_|  
+
+{
+  	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  	"logo": {
+	  	"type": "auto",
+        "source": "~/.config/fastfetch/asciiArts/bonfire.txt",
+        "padding": {
+            "top": 2,
+            "left": 0
+        }
+    },
+
+  	"display": {
+    	"color": {
+      		"keys": ""
+    	},
+    	"separator": "  ",
+    	"constants": [
+      		"\u001b[s",
+      		"\u001b[u\u001b[14C",
+      		"\u001b[38;2;230;138;66m",
+      		"\u001b[38;2;214;93;14m",
+      		"\u001b[38;2;240;192;64m",
+      		"\u001b[38;2;215;153;33m",
+      		"\u001b[38;2;106;181;184m",
+      		"\u001b[38;2;69;133;136m",
+      		"\u001b[38;2;208;112;160m",
+      		"\u001b[38;2;177;98;134m",
+      		"\u001b[38;2;196;195;48m",
+      		"\u001b[38;2;152;151;26m",
+      		"\u001b[38;2;139;192;140m",
+      		"\u001b[38;2;104;157;106m"
+    	]
+  },
+
+  	"modules": [
+		"break",
+		{
+			"type": "custom",
+			"format": "{#red}┌───────────────────────────"
+		},
+		{
+			"type": "custom",
+			"format": "{#red}├─┬─ System"
+		},
+		{
+		  	"type": "title",
+		  	"key": "│ ├─󰁥",
+		  	"keyColor": "red"
+		},
+		{
+		  	"type": "kernel",
+		  	"key": "│ ├─",
+		  	"keyColor": "red"
+		},
+		{
+		  	"type": "os",
+		  	"key": "│ └─󰓼",
+			"format": "{name} {codename}",
+		  	"keyColor": "red"
+		},
+		{
+			"type": "custom",
+			"format": "{#red}│"
+		},
+		{
+			"type": "custom",
+			"format": "{#red}├─┬─ Hardware"
+		},
+		{
+		  	"type": "host",
+		  	"key": "│ ├─",
+		  	"keyColor": "red"
+		},
+		{
+		  	"type": "display",
+		  	"format": "{inch}\" {refresh-rate}Hz {width}x{height} {name}",
+		  	"key": "│ ├─󰹑"
+		},
+		{
+		  	"type": "cpu",
+		  	"key": "│ ├┬",
+		  	"format": "{1}",
+		  	"keyColor": "red"
+		},
+		{
+		  	"type": "cpuusage",
+		  	"key": "│ │└",
+		  	"format": "Max: {max} - Avg: {avg}"
+		},
+		{
+		  	"type": "gpu",
+		  	"key": "│ ├─"
+		},
+		{
+		  	"type": "sound",
+		  	"key": "│ └─"
+		},
+		{
+			"type": "custom",
+			"format": "{#red}│"
+		},
+		{
+		  	"type": "custom",
+		  	"format": "{#red}├─┬─ Memory"
+		},
+		{
+		  	"type": "memory",
+		  	"key": "│ ├─",
+		  	"format": "RAM:  {percentage-bar} {percentage} of {total}",
+		  	"percent": {
+				"type": 3,     // Show both percentage number and bar
+				"green": 20,   // Values below 30% in green
+				"yellow": 70   // 30-70% in yellow, >70% in red
+			}
+		},
+
+		{
+		  	"type": "swap",
+		  	"key": "│ └─",
+		  	"format": "SWAP: {percentage-bar} {percentage} of {total}",
+		  	"percent": {
+				"type": 3,     // Show both percentage number and bar
+				"green": 20,   // Values below 30% in green
+				"yellow": 70   // 30-70% in yellow, >70% in red
+			}
+		},
+		{
+			"type": "custom",
+			"format": "{#red}│"
+		},
+		{
+		  	"type": "custom",
+		  	"format": "{#red}├─┬─ Storage"
+		},
+		{
+		  	"type": "disk",
+		  	"key": "│ ├─󰋊",
+		  	"format": "{size-percentage-bar} [{mountpoint}] {size-percentage} ({size-total})",
+		  	"percent": {
+				"type": 3,     // Show both percentage number and bar
+				"green": 30,   // Values below 30% in green
+				"yellow": 70   // 30-70% in yellow, >70% in red
+			},
+			"keyColor": "red"
+		},
+		{
+			"type": "command",
+			"key": "│ └─󱁻",
+			"keyColor": "red",
+			"text": "df -T /home | awk 'NR==2 {print $2}'"
+		},
+		{
+			"type": "custom",
+			"format": "{#red}│"
+		},
+		{
+		  	"type": "custom",
+		  	"format": "{#red}├─┬─ Config"
+		},
+		{
+		  	"type": "wm",
+		  	"key": "│ ├─󰹬",
+		  	"keyColor": "red"
+		},
+		{
+		  	"type": "shell",
+		  	"key": "│ ├─",
+		  	"keyColor": "red"
+		},
+
+		{
+		  	"type": "terminal",
+		  	"key": "│ └─",
+		  	"keyColor": "red"
+		},
+		{
+			"type": "custom",
+			"format": "{#red}│"
+		},
+		{
+		  	"type": "custom",
+		  	"format": "{#red}├─┬─󰲽 Dev"
+		},
+		{
+		  	"type": "command",
+		 	 "key": "│ ├─󰌠",
+		  	"keyColor": "red",
+		  	"text": "python3 --version",
+		  	"format": "python {~7}"
+		},
+		{
+		  	"type": "command",
+		  	"key": "│ ├─",
+		  	"keyColor": "red",
+		  	"text": "echo \"gcc $(gcc --version | head -n 1 | awk '{print $4}')\""
+		},
+		{
+		  	"type": "command",
+		  	"key": "│ ├─",
+		  	"keyColor": "red",
+		  	"text": "echo \"java $(./scripts/get_java_version.sh)\""
+		},
+		{
+		  	"type": "command",
+		  	"key": "│ └─󰊢",
+		  	"keyColor": "red",
+		  	"text": "git version",
+		  	"format": "git {~12}"
+		},
+		{
+			"type": "custom",
+			"format": "{#red}│"
+		},
+		{
+		  	"type": "custom",
+		  	"format": "{#red}├─┬─󰋽 ETC"
+		},
+		{
+		  	"type": "uptime",
+		  	"key": "│ ├─󰦖",
+			"keyColor": "red"
+		},
+		{
+			"type": "command",
+			"key": "│ └─",
+			"keyColor": "red",
+			"text": "./scripts/get_age.sh"
+		},
+		{
+			"type": "custom",
+			"format": "{#red}│"
+		},
+		{
+			"type": "custom",
+			"format": "{#red}└─┬────────────────────────┐"
+		},
+		{
+			"type": "custom",
+			"format":"  {#red}│{#30}███{#31}███{#32}███{#33}███{#34}███{#35}███{#36}███{#37}███{#red}│"
+		},
+		{
+			"type": "custom",
+			"format":"  {#red}│{#90}███{#91}███{#92}███{#93}███{#94}███{#95}███{#96}███{#97}███{#red}│"
+		},
+		{
+			"type": "custom",
+			"format":"  {#red}└────────────────────────┘"
+		}
+  	]
+}
