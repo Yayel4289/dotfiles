@@ -8,7 +8,7 @@
 
   	"logo": {
 	  	"type": "auto",
-        "source": "~/.config/fastfetch/asciiArts/bonfire.txt",
+        "source": "~/.config/fastfetch/current_ascii_art.txt",
         "padding": {
             "top": 2,
             "left": 0
@@ -35,7 +35,8 @@
       		"\u001b[38;2;152;151;26m",
       		"\u001b[38;2;139;192;140m",
       		"\u001b[38;2;104;157;106m"
-    	]
+    	],
+		"disableLinewrap": true
   },
 
   	"modules": [
@@ -112,7 +113,7 @@
 		{
 		  	"type": "memory",
 		  	"key": "│ ├─",
-		  	"format": "RAM:  {percentage-bar} {percentage} of {total}",
+		  	"format": "RAM:  {percentage-bar} {percentage} ({total})",
 		  	"percent": {
 				"type": 3,     // Show both percentage number and bar
 				"green": 20,   // Values below 30% in green
@@ -123,7 +124,7 @@
 		{
 		  	"type": "swap",
 		  	"key": "│ └─",
-		  	"format": "SWAP: {percentage-bar} {percentage} of {total}",
+		  	"format": "SWAP: {percentage-bar} {percentage} ({total})",
 		  	"percent": {
 				"type": 3,     // Show both percentage number and bar
 				"green": 20,   // Values below 30% in green
@@ -141,7 +142,7 @@
 		{
 		  	"type": "disk",
 		  	"key": "│ ├─󰋊",
-		  	"format": "{size-percentage-bar} [{mountpoint}] {size-percentage} ({size-total})",
+		  	"format": "{size-percentage-bar} {size-percentage} {mountpoint} ({size-total})",
 		  	"percent": {
 				"type": 3,     // Show both percentage number and bar
 				"green": 30,   // Values below 30% in green
@@ -204,7 +205,7 @@
 		  	"type": "command",
 		  	"key": "│ ├─",
 		  	"keyColor": "red",
-		  	"text": "echo \"java $(./scripts/get_java_version.sh)\""
+		  	"text": "echo \"java $(~/.config/fastfetch/scripts/get_java_version.sh)\""
 		},
 		{
 		  	"type": "command",
@@ -230,7 +231,7 @@
 			"type": "command",
 			"key": "│ └─",
 			"keyColor": "red",
-			"text": "./scripts/get_age.sh"
+			"text": "~/.config/fastfetch/scripts/get_age.sh"
 		},
 		{
 			"type": "custom",
@@ -238,19 +239,19 @@
 		},
 		{
 			"type": "custom",
-			"format": "{#red}└─┬────────────────────────┐"
+			"format": "{#red}│ ┌────────────────────────┐"
 		},
 		{
 			"type": "custom",
-			"format":"  {#red}│{#30}███{#31}███{#32}███{#33}███{#34}███{#35}███{#36}███{#37}███{#red}│"
+			"format":"{#red}│ │{#30}███{#31}███{#32}███{#33}███{#34}███{#35}███{#36}███{#37}███{#red}│"
 		},
 		{
 			"type": "custom",
-			"format":"  {#red}│{#90}███{#91}███{#92}███{#93}███{#94}███{#95}███{#96}███{#97}███{#red}│"
+			"format":"{#red}│ │{#90}███{#91}███{#92}███{#93}███{#94}███{#95}███{#96}███{#97}███{#red}│"
 		},
 		{
 			"type": "custom",
-			"format":"  {#red}└────────────────────────┘"
+			"format":"{#red}└─┴────────────────────────┘"
 		}
   	]
 }

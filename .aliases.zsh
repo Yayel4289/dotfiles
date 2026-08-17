@@ -11,6 +11,7 @@ alias dlv="/home/yayel4289/apps/dlv.i386-linux-elf-static.bin"
 
 alias wallhelper="$WALLHELPER_HOME/wallhelper"
 alias setwall="$WALLHELPER_HOME/setwall"
+alias fastfetch="~/.config/fastfetch/scripts/rand_ascii_fastfetch.sh"
 
 #alias lmstudio="~/apps/LMStudio/LM-Studio-0.4.18-1-x64.AppImage"
 

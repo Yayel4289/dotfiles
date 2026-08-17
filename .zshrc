@@ -133,7 +133,7 @@ eval "$(starship init zsh)"
 
 eval "$(dircolors ~/.dircolors)"
 
-neofetch
+~/.config/fastfetch/scripts/rand_ascii_fastfetch.sh
 
 #LS_COLORS=$LS_COLORS:'di=0;31:' ; export LS_COLORS
 
