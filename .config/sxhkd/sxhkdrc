@@ -32,6 +32,7 @@ super + alt + t
 
 #
 # close and kill
+# 
 alt + F4
 	bspc node -{c,k}
 
@@ -175,6 +176,10 @@ super + {Left,Down,Up,Right}
 # fullscreen for float 
 super + shift + f 
 	bspc node -f fullscreen
+
+# split desktops in 2
+super + alt + d
+	~/.utils/display/init_second_mon.sh
 
 #
 # Utils 
