@@ -1,0 +1,83 @@
+#!/bin/bash
+
+# Use xwinwrap-git from AUR (https://github.com/takase1121/xwinwrap)
+
+mapfile -t MONITORS < <(xrandr --query | grep " connected" | grep -oP '\d+x\d+\+\d+\+\d+')
+
+VIDEOPLAYER="mplayer" # mplayer or mpv
+
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+var=$(cat $HOME/.config/video-wallpapers/wallpaperVar)
+wallpapernum=$(ls $HOME/.config/video-wallpapers/wallpapers | wc -l)
+new=$((1 + $RANDOM % $wallpapernum))
+
+# if current shell is gnome or cinnamon or herbstluftwm, set args=$(-fs -ni -nf -b -un -fdt)
+# else set args=$(-fs -ni -nf -b -un -ov -fdt)
+if [[ $(echo $XDG_SESSION_DESKTOP | grep -Eo 'gnome|cinnamon|herbstluftwm') ]]; then
+    args="-ni -nf -b -un -fdt"
+else
+    args="-g 1920x1200+0+0 -ni -nf -b -un -fdt"
+fi
+
+if [[ $1 != "startup" ]]; then
+    if [[ $var -ge $wallpapernum ]]; then
+        echo 1 >$HOME/.config/video-wallpapers/wallpaperVar
+    else
+        echo $new >$HOME/.config/video-wallpapers/wallpaperVar
+    fi
+else
+    var=$(($var - 1))
+    if [ $var -eq 0 ]; then
+        var=$wallpapernum
+    fi
+fi
+
+function setwall() {
+    for geo in "${MONITORS[@]}"; do
+        # Sépare "WxH+X+Y" -> largeur / hauteur pour le zoom mplayer
+        res="${geo%%+*}"       
+        width="${res%%x*}"
+        height="${res##*x}"
+
+        if [[ $(ls $HOME/.config/video-wallpapers/wallpapers | grep $var.mp4) ]]; then
+            sleep 0.01
+            printf "$GREEN[INFO]$NC Setting wallpaper to $var.mp4 sur $geo\n"
+
+            if [[ $VIDEOPLAYER == "mplayer" ]]; then
+                videoargs="-wid WID -quiet -nosound -zoom -x $width -y $height $HOME/.config/video-wallpapers/wallpapers/$var.mp4 -loop 0 -nolirc -nomouseinput"
+            else
+                videoargs="-wid WID -vo=vx --fullscreen -quiet --no-audio $HOME/.config/video-wallpapers/wallpapers/$var.mp4 -loop"
+            fi
+
+            xwinwrap -g "$geo" -ni -nf -b -un -fdt -- $VIDEOPLAYER $videoargs >/dev/null &
+
+        elif [[ $(ls $HOME/.config/video-wallpapers/wallpapers | grep $var.gif) ]]; then
+            sleep 0.01
+            printf "$GREEN[INFO]$NC Setting wallpaper to $var.gif sur $geo\n"
+            xwinwrap -g "$geo" -ni -nf -b -un -fdt -- gifview -w %WID $HOME/.config/video-wallpapers/wallpapers/$var.gif --geometry "$res" -a >/dev/null &
+        fi
+    done
+}
+
+pkill -9 $VIDEOPLAYER
+pkill -9 gifview
+
+if [[ $1 =~ ^[0-9]+$ ]] && [[ $(ls $HOME/.config/video-wallpapers/wallpapers | grep $1) ]]; then
+    var=$1
+    printf "$GREEN[MODE]$NC Direct\n"
+else
+    printf "$GREEN[MODE]$NC Cycle\n"
+fi
+
+if [[ $VIDEOPLAYER == "mplayer" ]]; then
+    videoargs="-wid WID -quiet -nosound -zoom -x 1920 -y 1200 $HOME/.config/video-wallpapers/wallpapers/$var.mp4 -loop 0 -nolirc -nomouseinput"
+else
+    videoargs="-wid WID -vo=vx --fullscreen -quiet --no-audio $HOME/.config/video-wallpapers/wallpapers/$var.mp4 -loop"
+fi
+
+
+setwall 
+
+#else if [[ $(ls $HOME/.config/video-wallpapers/wallpapers/$var | grep .html) ]] # implement html wallpaper
