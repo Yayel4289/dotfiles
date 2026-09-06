@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "coc-clangd": ">=0.32.0",
+    "coc-pyright": ">=1.1.394",
+    "coc-json": ">=1.9.2",
+    "coc-sh": ">=1.2.4",
+    "coc-yaml": ">=1.9.0",
+    "coc-vimtex": ">=1.1.5",
+    "coc-java": ">=1.26.1",
+    "coc-css": ">=2.1.0",
+    "coc-markmap": ">=0.8.0",
+    "coc-r-lsp": ">=1.2.1",
+    "coc-tsserver": ">=2.3.1",
+    "coc-snippets": ">=3.4.7"
+  },
+  "lastUpdate": 1772609424295
+}
