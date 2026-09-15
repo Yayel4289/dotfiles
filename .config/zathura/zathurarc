@@ -1,0 +1,7 @@
+# Zathura Config
+
+set adjust-open width
+set window-title-basename true
+
+set scroll-step 50
+
