@@ -203,7 +203,7 @@ augroup code_execution
 	autocmd Filetype racket,scheme nnoremap <F10> :call CodeExecCmds("racket ")<CR>
 
 	" LaTeX 
-	autocmd FileType tex nnoremap <F10> :w<CR> :!pdflatex -interaction=batchmode %<CR><CR>
+	autocmd FileType tex nnoremap <F10> :w<CR> :!lualatex -interaction=batchmode %<CR><CR>
 
 	" Markdown (Markmap)
 	autocmd FileType markdown nnoremap <F10> :w<CR> :!markmap -o synth.html %<CR><CR>
