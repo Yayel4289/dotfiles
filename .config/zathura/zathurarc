@@ -1,7 +1,120 @@
 # Zathura Config
+# hadjust -> h adjust
 
-set adjust-open width
-set window-title-basename true
+set font							"monospace normal 9"
 
-set scroll-step 50
+set guioptions						"vs"
 
+set recolor 						true
+set recolor-adjust-lightness		false
+set recolor-keephue					true
+set recolor-reverse-video 			false
+set recolor-lightcolor				"rgba(0%,0%,0%,70%)"
+set recolor-darkcolor 				"#FF8800"
+
+set n-completion-items 				15
+set show-directories				true
+set show-hidden						true
+set show-recent						10
+set show-signature-information		false
+set completion-bg 					"rgba(0%,0%,0%,70%)"
+set completion-fg 					"#FF8800"
+set completion-group-bg 			"rgba(0%,0%,0%,70%)"
+set completion-group-fg 			"#FFAA00"
+set completion-highlight-bg 		"#FF8800"
+set completion-highlight-fg 		"#232323"
+
+set default-bg 						"#000000"
+set default-fg						"#DDDDDD"
+
+set inputbar-bg 					"rgba(0%,0%,0%,70%)"
+set inputbar-fg 					"#FF8800"
+
+set notification-bg 				"#FFFFFF"
+set notification-fg 				"#FF0000"
+set notification-error-bg 			"#FF1212"
+set notification-error-fg 			"#FFFFFF"
+set notification-warning-bg 		"#FFF712"
+set notification-warning-fg 		"#FFFFFF"
+set selection-notification 			true
+set signature-error-color 			"rgba(92%,11%,14%,0.9)"
+set signature-success-color 		"rgba(18%,80%,33%,0.9)"
+set signature-warning-color 		"rgba(100%,84%,0%,0.9)"
+
+set statusbar-basename				false
+set statusbar-home-tilde			true
+set statusbar-page-percent			true
+set statusbar-bg 					"rgba(0%,0%,0%,70%)"
+set statusbar-fg 					"#FF8800"
+set statusbar-h-padding				8
+set statusbar-v-padding				2
+
+set highlight-active-color 			"rgba(0,188,0,0.5)"
+set highlight-color 				"rgba(159,251,0,0.5)"
+set highlight-fg 					"rgba(0,0,0,0.5)"
+set highlighter-modifier 			"shift" # Use to (permanently) highlight in the doc
+
+set index-active-bg 				"#9FBC00"
+set index-active-fg 				"#232323"
+set index-bg 						"#232323"
+set index-fg 						"#DDDDDD"
+
+set render-loading 					true
+set render-loading-fg				"#FFFFFF"
+set render-loading-bg				"#000000"
+
+set page-v-padding 					2
+set page-h-padding 					1
+set page-right-to-left 				false
+set page-thumbnail-size 			4194304 # 4MB
+set single-page-mode 				false
+
+set incremental-search 				true # Search while typing
+set abort-clear-search				true
+set nohlsearch						false # no highlight search : false 
+set search-hadjust 					true
+
+set window-height					600
+set window-width 					800
+set adjust-open 					width
+set vertical-center					false
+set open-first-page 				false
+
+set first-page-column				"1:2"
+
+set advance-pages-per-row			false
+set pages-per-row 					1
+
+set continuous-hist-save			false
+set database						"sqlite"
+set jumplist-size 					200 # won't use
+set page-cache-size 				15 # DO NOT GO TOO HIGH
+
+set dbus-raise-window 				true
+set dbus-service					true # SyncTex
+set synctex 						true
+set synctex-edit-modifier			"ctrl"
+#set synctex-editor-command
+
+set double-click-follow				true
+set link-hadjust 					true
+set link-zoom 						true
+
+set filemonitor						"glib" # backend
+
+set window-title-basename 			true
+set window-title-home-tilde 		true
+set window-title-page 				true
+
+set selection-clipboard				"primary"
+
+set scroll-full-overlap				0
+set scroll-hstep					-1
+set scroll-step 					50
+set scroll-page-aware				false
+set scroll-wrap						false
+
+set zoom-center 					false
+set zoom-max 						1000
+set zoom-min 						10
+set zoom-step 						10
